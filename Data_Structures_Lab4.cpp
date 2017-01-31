@@ -32,10 +32,35 @@ void printNode()
         ptr=ptr->next;
     }
 }
+void sortNodes()
+{
+    struct node* ptr=head->next;
+    struct node* ptr1=head->next;
+    struct node* ptr2;
+    while(ptr!=head)
+    {
+        ptr1=head->next;
+        while(ptr1!=head)
+        {
+            ptr2=ptr1->next;
+            if (ptr1->ID>ptr2->ID)
+            {
+                int temp=ptr1->ID;
+                string tmp=ptr1->IP;
+                ptr1->ID=ptr2->ID;
+                ptr1->IP=ptr2->IP;
+                ptr2->ID=temp;
+                ptr2->IP=tmp;
+            }
+            ptr1=ptr1->next;
+        }
+        ptr=ptr->next;
+    }
+}
 int main()
 {
     head->next=head;
-    cout<<"Choose an option\n1.View List\n2.Add node\n3.Delete Node\n4.Find Distance between nodes\n5.Which node is closer?\n6.Exit\n";
+    cout<<"Choose an option\n1.View List\n2.Add node\n3.Delete Node\n4.Find Distance between nodes\n5.Which node is closer?\n6.Sort\n7.Exit\n";
     while(1)
     {
         int x;
@@ -132,6 +157,9 @@ int main()
             cout<<r<<" is closer to the master node\n";
         }
         else if (x==6)
-            break;
+            {
+                sortNodes();
+            }
+        else break;
     }
 }
