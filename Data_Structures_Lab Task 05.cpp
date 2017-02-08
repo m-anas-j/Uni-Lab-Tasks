@@ -164,8 +164,17 @@ int main()
                 stck2[l-1]=0;
                 l--;
             }
+            else if (expr3[i]=='^')
+            {
+                for (int i=2;i<=stck2[l-1];i++)
+                {
+                    stck2[l-2]*=stck2[l-2];
+                }
+                stck2[l-1]=0;
+                l--;
+            }
         }
-        cout<<"The result is: "<<stck2[l-1]<<endl; //l-1 referring to stck[0]
+        cout<<"The result is: "<<stck2[l-1]<<endl; //l-1 referring to stck2[0]
     }
     else break;
 }
