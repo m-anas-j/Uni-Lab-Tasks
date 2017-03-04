@@ -123,11 +123,10 @@ int main()
                     coef[ptr]=0;
                     exp[ptr]=0;
                     link[pre]=link[ptr];
-                    newavail=ptr;//5
-                    int temp=link[avail];//3
-                    link[avail]=newavail;//5
-                    link[newavail]=temp;//3
-                    //avail=newavail;
+                    newavail=ptr;
+                    int temp=link[avail];
+                    link[avail]=newavail;
+                    link[newavail]=temp;
                     cout<<"Ptr value "<<ptr<<" Avail value "<<avail<<endl;
                     break;
                 }
